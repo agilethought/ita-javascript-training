@@ -1,28 +1,26 @@
-# ita-javascript-training
+# ITA Javascript Training
+
+## Simple TDD JavaScript Excercises for ITA staff
 
 
-
-Simple TDD JavaScript Excercises for ITA staff
-
-
-Step 1: Step one should introduce the following core concepts
-    a) Simple functions and primitive types(dynamic concepts)
-    b) Variable declaration vs initialization 
-    c) Default values
-    d) Return types
-    e) GIGO, Garbage in garbage out
+Step 1. Step one should introduce the following core concepts
+    _* Simple functions and primitive types(dynamic concepts)
+    _* Variable declaration vs initialization 
+    _* Default values
+    _* Return types
+    _* GIGO, Garbage in garbage out
     
-Step 2: 
-    a) TDD based refactoring
-    b) Functions as closures and basic scope overview
-    c) Imediatly Invoked Function Expressions(IIFE)
-    d) Testing functions in isolation
-    e) Simple application layers for validation testing and application entry point
+Step 2.
+    _* TDD based refactoring
+    _* Functions as closures and basic scope overview
+    _* Imediatly Invoked Function Expressions(IIFE)
+    _* Testing functions in isolation
+    _* Simple application layers for validation testing and application entry point
 
-Step 3:
-    a) More TDD based rafactoring
-    b) Constructor functions and context
-    c) Object composition vs initialization
-    d) Other types of js objects
+Step 3.
+    _* More TDD based rafactoring
+    _* Constructor functions and context
+    _* Object composition vs initialization
+    _* Other types of js objects
     
     
