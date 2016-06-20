@@ -4,37 +4,52 @@
 
 // FullCourseCode.js
 
-
 var returnArrayFromCsvString = function(string){
-
     return string.split(",")
 }
 
-var fizzBuzzMain = function(){
-var responseArray = [];
+var fizzBuzzMain = function(maxIterations){
+    var responseArray = [];
+    var iterations  = (maxIterations == undefined)? 100 : maxIterations;
 
-    for(var i = 0; i < 100; i++){
-        if(i % 3 == 1){
-            responseArray.push("Fizz");
-        }
-        if (1 % 5 == 1){
-            responseArray.push("Buzz");
+    try{
+        if(isNaN(parseInt(iterations, 24)) || typeof iterations === "boolean" || typeof iterations === "object"){
+            throw new Error("Invalid input parameters")
         }
 
-        if(1 % 5 == 1 && 1 % 3 == 1){
-            responseArray.push("FizBuzz");
+        for(var i = 0; i < iterations; i++){
+            responseArray.push(returnStringFizzBuzz(i));
         }
+    }catch(ex){
+        throw ex
     }
-
-    return responseArray
 }
 
-var checkForPositiveValue = function(){
+var returnStringFizzBuzz = function(intUnderTest){
+    var fizz = 3;
+    var buzz = 5;
 
+    if(isEvenlyDivisibleInteger(intUnderTest, fizz) && isEvenlyDivisibleInteger(intUnderTest, buzz)){
+        return "FizzBuzz";
+    }
+
+    if(isEvenlyDivisibleInteger(intUnderTest, fizz)){
+        return "Fizz";
+    }
+
+    if (isEvenlyDivisibleInteger(intUnderTest, buzz)){
+        return "Buzz";
+    }
+}
+
+var isEvenlyDivisibleInteger = function(dividend, divisor){
+    return (!isNaN(dividend % divisor))? !(dividend % divisor) : undefined;
 }
 
 module.exports = {
     ReturnArrayFromCsvString : returnArrayFromCsvString,
-    FizzBuzzMain : fizzBuzzMain
+    FizzBuzzMain : fizzBuzzMain,
+    BoolCheckForEvenlyDivisibleInteger : isEvenlyDivisibleInteger,
+    ReturnStringFizzBuzz : returnStringFizzBuzz
 }
 
