@@ -17,7 +17,6 @@ var returnStringFizzBuzz = function(intUnderTest){
 }
 
 var isEvenlyDivisibleInteger = function(dividend, divisor){
-
 }
 
 module.exports = {

@@ -7,10 +7,10 @@
   - Variable declaration vs initialization 
   - Default values
   - Return types
-  - GIGO, Garbage in garbage out
+  - Defensive programming and exception handling
     
 2. Step two will cover function more in depth
-  - TDD based refactoring
+  - Basic refactoring
   - Functions as closures and basic scope overview
   - Immediately Invoked Function Expressions(IIFE)
   - Testing functions in isolation
