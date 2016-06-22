@@ -29,14 +29,14 @@ describe('Step 1: FizzBuzz Full Run', function(){
 
     it('should run to completion without exception with expanded input params', function(){
         //Arrange, Act, Assert;
-        assert.doesNotThrow(function() {fizzBuzzMain(50)});
+        assert.doesNotThrow(function() {fizzBuzzMain("15")});
     })
 
     it('should return undefined when executed successfully', function(){
         var iterations = 50;
         var response = fizzBuzzMain(iterations);
 
-        assert.isUndefined(response)
+        assert.isString(response);
     })
 
     it('should throw exception with invalid input parameter types -- object', function(){
