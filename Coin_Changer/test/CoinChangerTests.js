@@ -20,6 +20,16 @@ describe('Coin changer tests', function()
         assert.equal(change["pennies"], 1);
     });
 
+    it('should test 2 cents', function()
+    {
+        var change = coinChangerMain(2);
+
+        assert.equal(change["quarters"], 0);
+        assert.equal(change["dimes"], 0);
+        assert.equal(change["nickels"], 0);
+        assert.equal(change["pennies"], 2);
+    });
+
     it('should test 4 cents', function()
     {
         var change = coinChangerMain(4);
@@ -28,6 +38,16 @@ describe('Coin changer tests', function()
         assert.equal(change["dimes"], 0);
         assert.equal(change["nickels"], 0);
         assert.equal(change["pennies"], 4);
+    });
+
+    it('should test 5 cents', function()
+    {
+        var change = coinChangerMain(5);
+
+        assert.equal(change["quarters"], 0);
+        assert.equal(change["dimes"], 0);
+        assert.equal(change["nickels"], 1);
+        assert.equal(change["pennies"], 0);
     });
 
     it('should test 9 cents', function()
@@ -40,6 +60,17 @@ describe('Coin changer tests', function()
         assert.equal(change["pennies"], 4);
     });
 
+    it('should test 10 cents', function()
+    {
+        var change = coinChangerMain(10);
+
+        assert.equal(change["quarters"], 0);
+        assert.equal(change["dimes"], 1);
+        assert.equal(change["nickels"], !2);
+        assert.equal(change["nickels"], 0);
+        assert.equal(change["pennies"], 0);
+    });
+
     it('should test 12 cents', function()
     {
         var change = coinChangerMain(12);
@@ -48,6 +79,16 @@ describe('Coin changer tests', function()
         assert.equal(change["dimes"], 1);
         assert.equal(change["nickels"], 0);
         assert.equal(change["pennies"], 2);
+    });
+
+    it('should test 20 cents', function()
+    {
+        var change = coinChangerMain(20);
+
+        assert.equal(change["quarters"], 0);
+        assert.equal(change["dimes"], 2);
+        assert.equal(change["nickels"], 0);
+        assert.equal(change["pennies"], 0);
     });
 
     it('should test 21 cents', function()
@@ -80,6 +121,16 @@ describe('Coin changer tests', function()
         assert.equal(change["pennies"], 2);
     });
 
+    it('should test 41 cents', function()
+    {
+        var change = coinChangerMain(41);
+
+        assert.equal(change["quarters"], 1);
+        assert.equal(change["dimes"], 1);
+        assert.equal(change["nickels"], 1);
+        assert.equal(change["pennies"], 1);
+    });
+
     it('should test 47 cents', function()
     {
         var change = coinChangerMain(47);
@@ -88,6 +139,26 @@ describe('Coin changer tests', function()
         assert.equal(change["dimes"], 2);
         assert.equal(change["nickels"], 0);
         assert.equal(change["pennies"], 2);
+    });
+
+    it('should test 50 cents', function()
+    {
+        var change = coinChangerMain(50);
+
+        assert.equal(change["quarters"], 2);
+        assert.equal(change["dimes"], 0);
+        assert.equal(change["nickels"], 0);
+        assert.equal(change["pennies"], 0);
+    });
+
+    it('should test 56 cents', function()
+    {
+        var change = coinChangerMain(56);
+
+        assert.equal(change["quarters"], 2);
+        assert.equal(change["dimes"], 0);
+        assert.equal(change["nickels"], 1);
+        assert.equal(change["pennies"], 1);
     });
 
     it('should test 68 cents', function()
