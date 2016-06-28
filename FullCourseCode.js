@@ -8,46 +8,35 @@ var returnArrayFromCsvString = function(string){
     return string.split(",")
 }
 
-/*var divisible = function(num, fizzbuzz)
-{
-    if (num % fizzbuzz == 0)
-    {
-        return true;
-    }
-    else
-        return false;
-}*/
+//If a number is evenly divisible by 3 return Fizz
+//If a number is evenly divisible by 5 return Buzz
+//If a number is evenly divisible by both return FizzBuzz
+//If a number is not evenly divisible by both the parameter
 
 var fizzBuzzMain = function(valueToTest){
 
-    try
-    {
-        var converted = valueToTest;
-        if (typeof converted !== "number" || isNaN(converted))
-        {
+
+    try{
+        var converted = valueToTest || 10;
+
+        if(typeof valueToTest === 'number'){
             throw new Error("Invalid input parameters");
         }
-        
-        // forces an error to be thrown
+
         //throw new Error("Invalid input parameters");
 
-        if (converted % 3 === 0 && converted % 5 === 0)
-        {
+        if(converted % 5 == 0 && converted % 3 == 0 ){
             return "FizzBuzz";
         }
-        else if (converted % 5 === 0)
-        {
-            return "Buzz";
-        }
-        else if (converted % 3 === 0)
-        {
+        else if(converted % 3 == 0){
             return "Fizz";
         }
-        else
-            return valueToTest;
-    }
-    catch(ex)
-    {
+        else if(converted % 5 == 0){
+            return "Buzz";
+        }else{
+            return converted
+        }
+    }catch(ex){
         throw ex;
     }
 

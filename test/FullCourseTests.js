@@ -33,8 +33,8 @@ describe('Step 1: FizzBuzz Full Run', function(){
     })
 
     it('should return undefined when executed successfully', function(){
-        var iterations = 50;
-        var response = fizzBuzzMain(iterations);
+        var valueToTest = 50;
+        var response = fizzBuzzMain(valueToTest);
 
         assert.isString(response);
     })
@@ -42,23 +42,32 @@ describe('Step 1: FizzBuzz Full Run', function(){
     it('should throw exception with invalid input parameter types -- object', function(){
         //Arrange, Act, Assert
         assert.Throw(function() {fizzBuzzMain({test:"object"})}, Error, "Invalid input parameters");
+
+        assert.isString(response)
+
     })
 
     it('should throw exception with invalid input parameter types -- string', function(){
-        assert.Throw(function() {fizzBuzzMain("string")}, Error, "Invalid input parameters");
+        var valueToTest = "foo";
+
+        assert.Throw(function() {fizzBuzzMain(valueToTest)}, Error, "Invalid input parameters");
     })
 
     it('should throw exception with invalid input parameter types -- bool', function(){
-        assert.Throw(function() {fizzBuzzMain(false)}, Error, "Invalid input parameters");
+        assert.Throw(function() {fizzBuzzMain(100)}, Error, "Invalid input parameters");
         assert.Throw(function() {fizzBuzzMain(true)}, Error, "Invalid input parameters");
     })
 
     it('should throw exception with invalid input parameter types -- array', function(){
         assert.Throw(function() {fizzBuzzMain([1, 2, 3])}, Error, "Invalid input parameters");
-        assert.Throw(function() {fizzBuzzMain(["one", "two", "three"])}, Error, "Invalid input parameters");
-        assert.Throw(function() {fizzBuzzMain([1, "two", {"three" : "three"}])}, Error, "Invalid input parameters");
+        //assert.Throw(function() {fizzBuzzMain(["one", "two", "three"])}, Error, "Invalid input parameters");
+        //assert.Throw(function() {fizzBuzzMain([1, "two", {"three" : "three"}])}, Error, "Invalid input parameters");
     })
 
+    it('should throw exception with invalid input parameter types -- object', function(){
+        //Arrange, Act, Assert
+        assert.Throw(function() {fizzBuzzMain({test:"object"})}, Error, "Invalid input parameters");
+    })
     //it('should return an array of Fizz, Buzz and FizzBuzz indexes', function(){
     //    var response = fizzBuzzMain(50, "array");
     //
