@@ -49,6 +49,28 @@ var CoinChangerViewHandler = function()
     inputElement.innerHTML = injection.innerHTML;
 };
 
+var CoinChangerLoop = function ()
+{
+    var inputElement = document.getElementById('loop');
+    for (var i = 1; i < 100; i++)
+    {
+        var change = coinChangerMain(i);
+        var header = document.createElement('p');
+        header.innerHTML = "Cents: " + i;
+        inputElement.appendChild(header);
+        var injection = document.createElement('ul');
+        for(coin in change)
+        {
+            var outputString = coin + ': ' + change[coin];
+            var listElement = document.createElement('li');
+            listElement.innerHTML = outputString;
+            injection.appendChild(listElement);
+        }
+
+        inputElement.appendChild(injection);
+    }
+};
+
 if (typeof module !== "undefined")
 {
     module.exports = {
