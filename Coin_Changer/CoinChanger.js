@@ -51,14 +51,15 @@ var CoinChangerViewHandler = function()
 
 var CoinChangerLoop = function ()
 {
+    var fullList = document.createElement('div');
     var inputElement = document.getElementById('loop');
     for (var i = 1; i < 100; i++)
     {
         var change = coinChangerMain(i);
         var header = document.createElement('p');
-        header.innerHTML = "Cents: " + i;
-        inputElement.appendChild(header);
+        header.innerHTML = "<strong>Cents: </strong>" + i;
         var injection = document.createElement('ul');
+        injection.appendChild(header);
         for(coin in change)
         {
             var outputString = coin + ': ' + change[coin];
@@ -67,9 +68,12 @@ var CoinChangerLoop = function ()
             injection.appendChild(listElement);
         }
 
-        inputElement.appendChild(injection);
+        fullList.appendChild(injection);
     }
+    inputElement.innerHTML = fullList.innerHTML;
 };
+
+var timer = setInterval(CoinChangerLoop, 3000);
 
 if (typeof module !== "undefined")
 {
