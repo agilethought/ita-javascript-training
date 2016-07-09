@@ -4,7 +4,7 @@
 
 var chai = require('chai');
 var assert = chai.assert;
-var expect = chai.expect();
+var expect = chai.expect;
 
 var implementation = require('../conditionals.js');
 
