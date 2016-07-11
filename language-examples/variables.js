@@ -4,10 +4,8 @@
 
 //variables.js
 
-var ReturnDefaultVariableStateUndefined = function(){
-    var returnValue;
-
-    return returnValue;
+var ReturnDefaultVariableStateUndefined = function(argument){
+    return argument;
 }
 
 var ReturnBooleanTypeWhenArgumentPassIsBoolean = function(argument){
@@ -30,9 +28,53 @@ var ReturnStringTypeWhenArgumentPassIsString = function(argument){
     return returnValue;
 }
 
+var ReturnNumberTypeWhenArgumentPassIsNumber = function(argument){
+    var returnValue;
+
+    if(typeof argument === "number"){
+        returnValue = argument
+    }
+
+    return returnValue;
+}
+
+var ReturnObjectTypeWhenArgumentPassIsNull = function(argument){
+    var returnValue;
+
+    if(typeof argument === "object"){
+        returnValue = argument
+    }
+
+    return returnValue;
+}
+
+var ReturnObjectTypeWhenArgumentPassIsObject = function(argument){
+    var returnValue;
+
+    if(typeof argument === "object"){
+        returnValue = argument
+    }
+
+    return returnValue;
+}
+
+var ReturnObjectTypeWhenArgumentPassIsArray = function(argument){
+    var returnValue;
+
+    if(typeof argument === "object"){
+        returnValue = argument
+    }
+
+    return returnValue;
+}
+
 
 module.exports = {
     ReturnDefaultVariableStateUndefined : ReturnDefaultVariableStateUndefined,
     ReturnBooleanTypeWhenArgumentPassIsBoolean : ReturnBooleanTypeWhenArgumentPassIsBoolean,
-    ReturnStringTypeWhenArgumentPassIsString : ReturnStringTypeWhenArgumentPassIsString
+    ReturnStringTypeWhenArgumentPassIsString : ReturnStringTypeWhenArgumentPassIsString,
+    ReturnNumberTypeWhenArgumentPassIsNumber : ReturnNumberTypeWhenArgumentPassIsNumber,
+    ReturnObjectTypeWhenArgumentPassIsNull : ReturnObjectTypeWhenArgumentPassIsNull,
+    ReturnObjectTypeWhenArgumentPassIsObject : ReturnObjectTypeWhenArgumentPassIsObject,
+    ReturnObjectTypeWhenArgumentPassIsArray : ReturnObjectTypeWhenArgumentPassIsArray
 }
