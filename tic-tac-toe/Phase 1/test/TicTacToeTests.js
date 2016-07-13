@@ -19,10 +19,11 @@ describe("When executing the PlayTurn method", function(){
 
         assert.doesNotThrow(function(){
             scriptToTest.PlayTurn(0);
+            scriptToTest.PlayTurn(4)
         });
     });
 
-    it("should return a winning condition with 3 horizontal rows", function(){
+    it("should return a winning condition", function(){
 
         scriptToTest.PlayTurn(0);
         scriptToTest.PlayTurn(4);
@@ -34,52 +35,5 @@ describe("When executing the PlayTurn method", function(){
         assert(returnValue);
     });
 
-    it("should return a winning condition with 3 vertical cols", function(){
-
-        scriptToTest.PlayTurn(0);
-        scriptToTest.PlayTurn(1);
-        scriptToTest.PlayTurn(3);
-        scriptToTest.PlayTurn(5);
-
-        var returnValue = scriptToTest.PlayTurn(6);
-
-        assert(returnValue);
-    });
-
-    it("should return a winning condition with 3 right diagonal cols", function(){
-
-        scriptToTest.PlayTurn(0);
-        scriptToTest.PlayTurn(1);
-        scriptToTest.PlayTurn(4);
-        scriptToTest.PlayTurn(5);
-
-        var returnValue = scriptToTest.PlayTurn(4);
-
-        assert(returnValue);
-    });
-
-    it("should return a winning condition with 3 left diagonal cols", function(){
-
-        scriptToTest.PlayTurn(0);
-        scriptToTest.PlayTurn(1);
-        scriptToTest.PlayTurn(4);
-        scriptToTest.PlayTurn(5);
-
-        var returnValue = scriptToTest.PlayTurn(4);
-
-        assert(returnValue);
-    });
-
-    it("should return a winning condition with 3 right diagonal cols", function(){
-
-        scriptToTest.PlayTurn(0);
-        scriptToTest.PlayTurn(1);
-        scriptToTest.PlayTurn(4);
-        scriptToTest.PlayTurn(5);
-
-        var returnValue = scriptToTest.PlayTurn(4);
-
-        assert(returnValue);
-    });
 });
 

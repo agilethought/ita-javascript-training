@@ -2,11 +2,6 @@
 
 ## Tic Tac Toe JavaScript Exercises for ITA staff
 
-Following is a list of Katas and Test Suites available in this repository 
-
-- Language Examples:
-  - Test driven examples of concepts unique to the JavaScript language.
-
 - Fizz Buzz: Basic structure and tests
   - Test Conditions:
     - Number is evenly divisible by 3 return "Fizz"
